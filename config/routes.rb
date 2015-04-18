@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'teams/create'
+
+  get 'teams/join'
+
   get 'add_project' => 'projects#new'
 
   get 'sessions/new'
 
   get 'users/new'
-
+  
   root             'static_pages#home'
   get    'help'    => 'static_pages#help'
   get    'about'   => 'static_pages#about'
@@ -16,6 +20,7 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   resources :users
   resources :projects
+  resources :teams
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
