@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418214130) do
+ActiveRecord::Schema.define(version: 20150419101151) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -20,21 +20,32 @@ ActiveRecord::Schema.define(version: 20150418214130) do
     t.text     "description"
     t.boolean  "oncampus"
     t.boolean  "islegacy"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "approved",     default: false
   end
 
-  create_table "team_members", force: :cascade do |t|
-    t.string "team_name"
-    t.string "username"
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  add_index "relationships", ["team_id"], name: "index_relationships_on_team_id"
+  add_index "relationships", ["user_id", "team_id"], name: "index_relationships_on_user_id_and_team_id", unique: true
+  add_index "relationships", ["user_id"], name: "index_relationships_on_user_id"
 
   create_table "teams", force: :cascade do |t|
-    t.string "team_name"
-    t.string "team_lead"
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "code"
   end
 
-  add_index "teams", ["team_name"], name: "index_teams_on_team_name", unique: true
+  add_index "teams", ["name"], name: "index_teams_on_name", unique: true
+  add_index "teams", ["user_id"], name: "index_teams_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -45,5 +56,7 @@ ActiveRecord::Schema.define(version: 20150418214130) do
     t.string   "remember_digest"
     t.boolean  "admin",           default: false
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
