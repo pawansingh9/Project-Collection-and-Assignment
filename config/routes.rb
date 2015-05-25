@@ -14,24 +14,44 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  get    'resetDB' => 'reset#downloadAndReset'
   resources :users
   resources :projects
-
   resources :projects do
     member do
       get :approve, :unapprove
       patch :toggle
     end
   end
+
   get 'approved_projects' => "projects#approved"
   get 'unapproved_projects' => "projects#unapproved"
 
   resources :teams
 
+  resources :teams do
+    member do
+      get :preference
+    end
+  end
+
   resources :relationships, only: [:destroy]
   get 'jointeam' => 'relationships#new'
   post 'jointeam' => 'relationships#create'
   delete 'leaveteam' => 'relationships#destroy'
+
+  resources :preferences, only: [:create]
+  get 'assign' => 'assignments#assign'
+  get 'viewassign' => 'assignments#view'
+  get 'download' => 'assignments#download'
+  
+  resources :preassignments
+  get 'preassignment' => 'preassignments#show'
+  post 'preassignment' => 'preassignments#view'
+  get 'preassign' => 'preassignments#new'
+  post 'preassign' => 'preassignments#create'
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
