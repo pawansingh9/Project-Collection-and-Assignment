@@ -3,7 +3,7 @@ A web application, which uses Bi- Partite Maximum Matching to solve the problem 
 
 Active Link : https://projectassign.herokuapp.com
 
-<b>Contributors</b>
+<b>Contributors</b><br/>
 Deep Desai : Developed the application ready for Acceptance Testing using RSpec and Cucumber<br />
 Jasmeet Singh : Developed the modules of Project Registration & Group Formation. Also, developed the controllers for the application<br />
 Prannay Jain : Developed the module of User Registration & Login mechanism<br />
