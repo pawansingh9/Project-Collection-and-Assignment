@@ -4,9 +4,9 @@ A web application, which uses Bi- Partite Maximum Matching to solve the problem 
 Active Link : https://projectassign.herokuapp.com
 
 <b>Contributors</b><br/>
-Deep Desai : Developed the application ready for Acceptance Testing using RSpec and Cucumber<br />
-Jasmeet Singh : Developed the modules of Project Registration & Group Formation. Also, developed the controllers for the application<br />
-Prannay Jain : Developed the module of User Registration & Login mechanism<br />
-Pawan Kumar Singh : Developed the Project Allocation Mechanism for the application. Worked for the Bootstrap implementation of the Application<br />
-Samaksh Kapoor : Developed Help pages and Manuals<br />
-Spandana Kancheti : Developed Database for the application<br />
+<a href="https://github.com/deepd">Deep Desai</a> : Developed the application ready for Acceptance Testing using RSpec and Cucumber.<br />
+<a href="https://github.com/jasmeet13n">Jasmeet Singh</a> : Developed the modules of Project Registration & Group Formation. Also, developed the controllers for the application.<br />
+<a href="https://github.com/Prannay">Prannay Jain</a> : Developed the module of User Registration & Login mechanism.<br />
+<a href="https://github.com/pawansingh9">Pawan Kumar Singh</a> : Developed the Project Allocation Mechanism for the application. Worked for the Bootstrap implementation of the Application.<br />
+<a href="https://github.com/samakshkapoor92">Samaksh Kapoor</a> : Developed Help pages and Manuals.<br />
+Spandana Kancheti : Developed Database for the application.<br />
